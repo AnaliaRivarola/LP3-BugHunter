@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package lp3.grupal.BugHunter.models;
+package lp3.grupal.BugHunter2.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
@@ -23,16 +23,14 @@ import java.util.List;
  * @author anali
  */
 
-        @Entity
-@Table(name="rol")
+
+
 public class Rol {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    
-    @Column(name="r_id")
+
+
     private Long r_id;
     
-    @Column(name="r_nombre")
+
     private String r_nombre;
     
    /* @ManyToMany(mappedBy="r_rol",cascade = CascadeType.ALL, fetch= FetchType.LAZY)
