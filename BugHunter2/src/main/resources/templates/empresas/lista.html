@@ -23,6 +23,7 @@
                     <td th:text="${e.e_telefono}"></td>
                     <td><a type="button" class="btn btn-success" th:href="@{/empresas/editar/}+${e.e_id}" >Editar</a></td>
                     <td><a type="button" class="btn btn-danger" th:href="@{/empresas/borrar/}+${e.e_id}" >Borrar</a></td>
+                    <td><a type="button" class="btn btn-danger" th:href="@{/empresas/}+${e.e_id}+@{/productos}" >Productos</a></td>
                 </tr>
 
             </table>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2023 a las 17:16:32
+-- Tiempo de generación: 26-06-2023 a las 23:29:51
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -39,7 +39,8 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`e_id`, `e_nombre`, `e_direccion`, `e_telefono`) VALUES
-(2, 'Tigo', 'Encarnacion', '0985000000');
+(2, 'Tigo', 'Encarnacion', '0985000000'),
+(3, 'Claro', 'Encar', '0972111111');
 
 -- --------------------------------------------------------
 
@@ -51,6 +52,13 @@ CREATE TABLE `marca` (
   `m_id` int(11) NOT NULL,
   `m_nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`m_id`, `m_nombre`) VALUES
+(1, 'Samsung');
 
 -- --------------------------------------------------------
 
@@ -74,7 +82,7 @@ CREATE TABLE `marca_seq` (
 --
 
 INSERT INTO `marca_seq` (`next_not_cached_value`, `minimum_value`, `maximum_value`, `start_value`, `increment`, `cache_size`, `cycle_option`, `cycle_count`) VALUES
-(1, 1, 9223372036854775806, 1, 50, 1000, 0, 0);
+(50001, 1, 9223372036854775806, 1, 50, 1000, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -94,6 +102,15 @@ CREATE TABLE `producto` (
   `p_marca_id` int(11) DEFAULT NULL,
   `p_empresa_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`p_id`, `p_nombre`, `p_descripcion`, `p_pantalla`, `p_almacenamiento`, `p_ram`, `p_sistema_operativo`, `p_procesador`, `p_marca_id`, `p_empresa_id`) VALUES
+(1, 'Samsung S9', 'celu', '456', '500', '16', 'Android', 'poui', 1, 2),
+(2, 'Samsung S20', 'celular', '876', '987', '827', 'android', '749', 1, 3),
+(52, 'yujhb', 'olitkuyjtd', 'rmn', ',yut', 'o8ltikruj', 'itkr', 'ujyti', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -117,7 +134,7 @@ CREATE TABLE `producto_seq` (
 --
 
 INSERT INTO `producto_seq` (`next_not_cached_value`, `minimum_value`, `maximum_value`, `start_value`, `increment`, `cache_size`, `cycle_option`, `cycle_count`) VALUES
-(1, 1, 9223372036854775806, 1, 50, 1000, 0, 0);
+(50001, 1, 9223372036854775806, 1, 50, 1000, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -233,13 +250,13 @@ ALTER TABLE `usuario_rol`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `e_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `e_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`

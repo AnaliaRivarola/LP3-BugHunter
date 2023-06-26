@@ -7,7 +7,7 @@
     <body>
         <div th:fragment="productoLista"><h1>LISTA</h1>
         <div class="col-8">   
-            <h2>Productos</h2>
+            <h1 th:each="p: ${productos[0]}" th:text="@{Productos de: }+${p.empresa.e_nombre}"></h1>
             <a href="/empresas/producto/nuevo">Nuevo</a>
             <table class="table table-striped table-hover">
                 <tr>
@@ -20,10 +20,9 @@
                     <th>Procesador</th>
                     <th>Pantalla</th>
                     <th>Empresa</th>
-                    <th>Marca</th>
 
                 </tr>
-                <tr th:each="p: ${producto}">
+                <tr th:each="p: ${productos}">
                     <td th:text="${p.p_id}"></td>
                     <td th:text="${p.p_nombre}"></td>
                     <td th:text="${p.p_descripcion}"></td>
@@ -32,7 +31,6 @@
                     <td th:text="${p.p_sistemaOperativo}"></td>
                     <td th:text="${p.p_procesador}"></td>
                     <td th:text="${p.p_pantalla}"></td>
-                    <td th:text="${p.empresa != null ? p.empresa.e_nombre : ''}"></td>
                     <td th:text="${p.marca != null ? p.marca.m_nombre : ''}"></td>
                     <td><a type="button" class="btn btn-success" th:href="@{/empresas/producto/editar/}+${p.p_id}" >Editar</a></td>
                     <td><a type="button" class="btn btn-danger" th:href="@{/empresas/producto/borrar/}+${p.p_id}" >Borrar</a></td>
@@ -45,4 +43,4 @@
         </div>
     </body>
 </html>
-                
+

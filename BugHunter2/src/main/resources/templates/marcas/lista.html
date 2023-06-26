@@ -21,6 +21,7 @@
                     <td th:text="${m.m_nombre}"></td>
                     <td><a type="button" class="btn btn-success" th:href="@{/marcas/editar/}+${m.m_id}" >Editar</a></td>
                     <td><a type="button" class="btn btn-danger" th:href="@{/marcas/borrar/}+${m.m_id}" >Borrar</a></td>
+                    <td><a type="button" class="btn btn-danger" th:href="@{/marcas/}+${m.m_id}+@{/productos}" >Productos</a></td>
                 </tr>
 
             </table>

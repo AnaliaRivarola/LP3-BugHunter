@@ -1,7 +1,10 @@
 package lp3.grupal.BugHunter2.Controllers;
 
+import java.util.List;
 import lp3.grupal.BugHunter2.Models.Marca;
+import lp3.grupal.BugHunter2.Models.Producto;
 import lp3.grupal.BugHunter2.Repositorio.MarcaRepository;
+import lp3.grupal.BugHunter2.Repositorio.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MarcaController {
     @Autowired 
     private MarcaRepository marca_repo;
+    private ProductoRepository productoRepository;
     
     @GetMapping(value="/")
     public String  index(Model model)
@@ -36,7 +40,7 @@ public class MarcaController {
         return "index";
     }
     
-    @GetMapping("/editar/{e_id}")
+    @GetMapping("/editar/{m_id}")
     public String editar(Model model, Marca marca){
         marca=marca_repo.findById(marca.getM_id()).orElse(null);
         model.addAttribute("marcas", marca);
@@ -45,7 +49,7 @@ public class MarcaController {
         return "index";
     }
     
-    @GetMapping("/borrar/{e_id}")
+    @GetMapping("/borrar/{m_id}")
     public String borrar(Marca marca){
         marca_repo.delete(marca);
         return "redirect:/marcas/";
@@ -56,5 +60,22 @@ public class MarcaController {
     {  
         marca_repo.save(marca);
         return "redirect:/marcas/";
+    }
+
+    public MarcaController(MarcaRepository marca_repo, ProductoRepository productoRepository) {
+        this.marca_repo = marca_repo;
+        this.productoRepository = productoRepository;
+    }
+    
+    @GetMapping("/{m_id}/productos")
+    public String listaProductosPorMarca(Model model, Marca marca){
+        marca=marca_repo.findById(marca.getM_id()).orElse(null);
+        if (marca != null) {
+            List<Producto> productos = productoRepository.findAllByMarca(marca);
+            model.addAttribute("productos", productos);
+        }
+        model.addAttribute("vista", "admin/productos_s_marca");
+        model.addAttribute("fragmento", "productoLista");
+        return "index";
     }
 }
