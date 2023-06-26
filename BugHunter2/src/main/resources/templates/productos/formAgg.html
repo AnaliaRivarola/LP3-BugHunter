@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http:://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:fragment="productoformAgg">
+            <h1>Productos</h1>
+            <a href="/empresas/producto/">Volver</a>
+            <form th:action="@{/empresas/producto/guardar}" method="post" th:object="${producto}">
+                <input type="hidden" name="p_id" th:field="*{p_id}">
+                <input type="text" id="p_nombre" name="p_nombre" placeholder="Ingrese el nombre del producto" th:field="*{p_nombre}">
+                <input type="text" id="p_descripcion" name="p_descripcion" placeholder="Descripcion del producto" th:field="*{p_descripcion}">
+                <input type="text" id="p_almacenamiento" name="p_almacenamiento" placeholder="Memoria de Almacenamiento" th:field="*{p_almacenamiento}">
+                <input type="text" id="p_ram" name="p_ram" placeholder="Memoria RAM" th:field="*{p_ram}">
+                <input type="text" id="p_sistemaOperativo" name="p_sistemaOperativo" placeholder="Sistema Operativo" th:field="*{p_sistemaOperativo}">
+                <input type="text" id="p_procesador" name="p_procesador" placeholder="Procesador" th:field="*{p_procesador}">
+                <input type="text" id="p_pantalla" name="p_pantalla" placeholder="Pantalla" th:field="*{p_pantalla}">
+                
+                <label for="empresa">Empresa:</label>
+                <select class="form-control" id="empresa" name="empresa">
+                    
+                    
+                   
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+        </div> 
+    </body>
+</html>

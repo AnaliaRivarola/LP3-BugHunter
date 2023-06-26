@@ -1,6 +1,7 @@
 package lp3.grupal.BugHunter2.Models;
 
 import jakarta.persistence.Basic;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,9 +31,13 @@ public class Producto {
     @JoinColumn(name = "p_marca_id")
     private Marca marca;
 
-    @ManyToOne
-    @JoinColumn(name = "p_empresa_id")
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "p_empresa_id", insertable = false, updatable = false)
     private Empresa empresa;
+    
+    /*@OneToOne(cascade = {CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name="id_cliente", insertable = false, updatable = false)
+    private Cliente client;*/
 
     @Column(name = "p_pantalla")
     private String p_pantalla;
