@@ -20,6 +20,7 @@
                     <th>Procesador</th>
                     <th>Bateria</th>
                     <th>Empresa</th>
+                    <th>Marca</th>
 
 
 
@@ -35,6 +36,7 @@
                     <td th:text="${p.p_sistemaOperativo}"></td>
                     <td th:text="${p.p_procesador}"></td>
                     <td th:text="${p.empresa}"></td>
+                    <td th:text="${p.marca}"></td>
                     <td><a type="button" class="btn btn-success" th:href="@{/empresas/producto/editar/}+${p.p_id}" >Editar</a></td>
                     <td><a type="button" class="btn btn-danger" th:href="@{/empresas/producto/borrar/}+${p.p_id}" >Borrar</a></td>
                 </tr>

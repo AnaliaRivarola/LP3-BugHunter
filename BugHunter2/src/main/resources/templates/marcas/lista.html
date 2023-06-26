@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:fragment="marcaslista"><h1>LISTA</h1>
+        <div class="col-8">   
+            <h2>Marcas</h2>
+            <a href="/marcas/nuevo">Nuevo</a>
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Id</th>
+                    <th>Marcas</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
+                </tr>
+                <tr th:each="m: ${marcas}">
+                    <td th:text="${m.m_id}"></td>
+                    <td th:text="${m.m_nombre}"></td>
+                    <td><a type="button" class="btn btn-success" th:href="@{/marcas/editar/}+${m.m_id}" >Editar</a></td>
+                    <td><a type="button" class="btn btn-danger" th:href="@{/marcas/borrar/}+${m.m_id}" >Borrar</a></td>
+                </tr>
+
+            </table>
+             </div>
+        </div>
+            </div> 
+        </div>
+    </body>
+</html>
+                
