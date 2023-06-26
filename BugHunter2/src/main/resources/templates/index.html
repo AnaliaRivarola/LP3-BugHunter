@@ -1,45 +1,22 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="https://www.thymeleaf.org">
+    <head th:replace="comunes/template :: head">
+        <title>Portada</title>
+    </head>
     <body>
-    <div class=" page-container " style="width : 100%; height : 100%;">
-    <div class="row flex-nowrap content-wrap"> 
-    <div class="col-auto flex-nowrap d-flex" style="width : 100%; height : 100%;position: relative;">   
-      <div class="col-8" style="margin: 0 auto;" >   
-        <h2 style="text-align:center; margin-left: 5px;">Lista de Empresas</h2>
-        <a href="/nuevo" style="margin-left: 5px;">Nueva Empresa</a>
-        
-        <div class="col py-3" style="width : 100%; height : 100%;">
-            <table  style=""class="table table-striped table-hover">
-                
-            <tr>
-                <th>Id</th>
-                <th>Empresa</th>
-                <th>Editar</th>
-                <th>Borrar</th>
-            </tr>
-            <tr th:each="e: ${empresas}">
-                <td th:text="${e.e_id}"></td>
-                <td th:text="${e.e_nombre}"></td>
-                <td><a type="button" class="btn btn-success" th:href="@{/editar/}+${e.e_id}" >Editar</a></td>
-                <td><a type="button" class="btn btn-danger" th:href="@{/borrar/}+${e.e_id}" >Borrar</a></td>
-            </tr>
-            
-        </table>
-            
-         
+        <header th:replace="comunes/template :: header"></header>
+        <div>
+            <div class="row">
+                <div th:replace="comunes/template :: sidebar">aside</div>
+                <div class="col-8">
+                    <div th:replace="@{${vista}} :: ${fragmento}"></div>
+                </div>
+            </div>
         </div>
-        
-        
-        
-         </div>
-    
-    
-    </div>   
-   
-    </div>
-        
-        </div>
-        
-        
-       
-    </body>     
+        <footer th:replace="comunes/template :: footer"></footer>
+    </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http:://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:fragment="empresasformAgg">
+            <h1>Formulario</h1>
+            <a href="/empresas/">Volver</a>
+            <form th:action="@{/empresas/guardar}" method="post" th:object="${empresa}">
+                <input type="hidden" name="e_id" th:field="*{e_id}">
+                <input type="text" id="e_nombre" name="e_nombre" placeholder="Ingrese el nombre de la empresa" th:field="*{e_nombre}">
+                <input type="text" id="e_direccion" name="e_direccion" placeholder="Ingrese la dirección de la empresa" th:field="*{e_direccion}">
+                <input type="text" id="e_telefono" name="e_telefono" placeholder="Ingrese el telefono de la empresa" th:field="*{e_telefono}">
+                <button type="submit">Enviar</button>
+            </form>
+        </div> 
+    </body>
+</html>

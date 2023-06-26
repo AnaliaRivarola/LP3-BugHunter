@@ -17,6 +17,7 @@ import java.util.List;
 public class Marca {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "m_id")
     private Long m_id;
     
     @Basic
@@ -24,7 +25,7 @@ public class Marca {
     private String m_nombre;
     
     @OneToMany(targetEntity=Producto.class, cascade=CascadeType.ALL)
-    @JoinColumn(name="m_productos", referencedColumnName="m_id")
+    @JoinColumn(name="p_marca_id", referencedColumnName="m_id")
     private List<Producto> productos;
 
     public Marca() {

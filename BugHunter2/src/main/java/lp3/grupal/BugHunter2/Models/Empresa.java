@@ -9,13 +9,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import java.util.List;
 import org.springframework.stereotype.Service;
 @Service 
 @Entity
+@Table (name="empresa")
 public class Empresa {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column (name="e_id")
     private Long e_id;
     @Basic
     
@@ -28,12 +31,12 @@ public class Empresa {
     @Column (name="e_telefono")
     private String e_telefono;
     
-    @OneToMany(targetEntity=Producto.class, cascade=CascadeType.ALL)
-    @JoinColumn(name="e_usuarios", referencedColumnName="e_id")
+    @OneToMany(targetEntity=Usuario.class, cascade=CascadeType.ALL)
+    @JoinColumn(name="u_empresa_id", referencedColumnName="e_id")
     private List<Usuario> usuario;
     
     @OneToMany(targetEntity=Producto.class, cascade=CascadeType.ALL)
-    @JoinColumn(name="e_productos", referencedColumnName="e_id")
+    @JoinColumn(name="p_empresa_id", referencedColumnName="e_id")
     private List<Producto> productos;
     
 

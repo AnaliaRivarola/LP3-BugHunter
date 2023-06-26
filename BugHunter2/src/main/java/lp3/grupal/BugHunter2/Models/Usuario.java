@@ -1,55 +1,55 @@
 package lp3.grupal.BugHunter2.Models;
 
 import jakarta.persistence.Basic;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name="usuario")
 public class Usuario {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column (name="u_id")
     private Long u_id;
     @Basic
+    @Column(name = "u_nombre")
     private String u_nombre;
+     @Column(name = "u_correo_electronico")
     private String u_correo;
+    @Column(name = "u_contrasena")
     private String u_contrasena;
     
     @ManyToOne
-    @JoinColumn(name="p_empresa")
-    Empresa empresa;
+    @JoinColumn(name="u_empresa_id")
+    private Empresa empresa;
     
-    
-    
-    @ManyToMany(mappedBy="usuarios",fetch=FetchType.LAZY)
-    private Set<Rol> roles;
+    @ManyToMany
+    @JoinTable(
+        name = "Usuario_Rol",
+        joinColumns = @JoinColumn(name = "ur_usuario_id"),
+        inverseJoinColumns = @JoinColumn(name = "ur_rol_id")
+    )
+    private List<Rol> roles;
 
     public Usuario() {
     }
 
-    public Usuario(Long u_id, String u_nombre, String u_correo, String u_contrasena, Empresa empresa, Set<Rol> roles) {
+    public Usuario(Long u_id, String u_nombre, String u_correo, String u_contrasena, Empresa empresa, List<Rol> roles) {
         this.u_id = u_id;
         this.u_nombre = u_nombre;
         this.u_correo = u_correo;
         this.u_contrasena = u_contrasena;
         this.empresa = empresa;
         this.roles = roles;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
     }
 
     public Long getU_id() {
@@ -84,12 +84,21 @@ public class Usuario {
         this.u_contrasena = u_contrasena;
     }
 
-    public Set<Rol> getRoles() {
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public List<Rol> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Rol> roles) {
+    public void setRoles(List<Rol> roles) {
         this.roles = roles;
     }
 
+    
 }
