@@ -37,6 +37,7 @@ public class EmpresaController {
     
     @GetMapping("/nuevo")
     public String nuevo(Model model, Empresa empresa){
+        model.addAttribute("empresas", empresa);
         model.addAttribute("vista", "empresas/formAgg");
         model.addAttribute("fragmento", "empresasformAgg");
         return "index";

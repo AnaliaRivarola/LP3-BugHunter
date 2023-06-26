@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2023 a las 23:29:51
+-- Tiempo de generación: 27-06-2023 a las 00:35:29
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -58,7 +58,8 @@ CREATE TABLE `marca` (
 --
 
 INSERT INTO `marca` (`m_id`, `m_nombre`) VALUES
-(1, 'Samsung');
+(1, 'Samsung'),
+(3, 'Xiaomi');
 
 -- --------------------------------------------------------
 
@@ -146,6 +147,14 @@ CREATE TABLE `rol` (
   `r_id` int(11) NOT NULL,
   `r_nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `rol`
+--
+
+INSERT INTO `rol` (`r_id`, `r_nombre`) VALUES
+(1, 'Administrador'),
+(2, 'Usuario');
 
 -- --------------------------------------------------------
 
@@ -250,19 +259,19 @@ ALTER TABLE `usuario_rol`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `e_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `e_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

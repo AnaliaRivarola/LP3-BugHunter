@@ -1,47 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html xmlns="http:://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
+        <title>Inicio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div th:fragment="productoLista"><h1>LISTA</h1>
-        <div class="col-8">   
-            <h2>Productos</h2>
-            <a href="/empresas/producto/nuevo">Nuevo</a>
-            <table class="table table-striped table-hover">
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Descripcion</th>
-                    <th>Memoria de Almacenamiento</th>
-                    <th>Memoria RAM</th>
-                    <th>Sistema Operativo</th>
-                    <th>Procesador</th>
-                    <th>Pantalla</th>
-                    <th>Empresa</th>
-                    <th>Marca</th>
-
-                </tr>
-                <tr th:each="p: ${producto}">
-                    <td th:text="${p.p_id}"></td>
-                    <td th:text="${p.p_nombre}"></td>
-                    <td th:text="${p.p_descripcion}"></td>
-                    <td th:text="${p.p_almacenamiento}"></td>
-                    <td th:text="${p.p_ram}"></td>
-                    <td th:text="${p.p_sistemaOperativo}"></td>
-                    <td th:text="${p.p_procesador}"></td>
-                    <td th:text="${p.p_pantalla}"></td>
-                    <td th:text="${p.empresa != null ? p.empresa.e_nombre : ''}"></td>
-                    <td th:text="${p.marca != null ? p.marca.m_nombre : ''}"></td>
-                    <td><a type="button" class="btn btn-success" th:href="@{/empresas/producto/editar/}+${p.p_id}" >Editar</a></td>
-                    <td><a type="button" class="btn btn-danger" th:href="@{/empresas/producto/borrar/}+${p.p_id}" >Borrar</a></td>
-                </tr>
-
-            </table>
-             </div>
-        </div>
-            </div> 
-        </div>
+        <div th:fragment="marcasformAgg">
+            <h1>Formulario</h1>
+            <a href="/marcas/">Volver</a>
+            <form th:action="@{/marcas/guardar}" method="post" th:object="${marcas}">
+                <input type="hidden" name="m_id" th:field="*{m_id}">
+                <input type="text" id="m_nombre" name="m_nombre" placeholder="Ingrese el nombre de la marca" th:field="*{m_nombre}">
+                <button type="submit">Enviar</button>
+            </form>
+        </div> 
     </body>
 </html>
