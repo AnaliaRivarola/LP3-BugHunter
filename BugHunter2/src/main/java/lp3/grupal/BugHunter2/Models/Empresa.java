@@ -10,7 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import java.util.List;
-
+import org.springframework.stereotype.Service;
+@Service 
 @Entity
 public class Empresa {
     @Id
@@ -34,6 +35,8 @@ public class Empresa {
     @OneToMany(targetEntity=Producto.class, cascade=CascadeType.ALL)
     @JoinColumn(name="e_productos", referencedColumnName="e_id")
     private List<Producto> productos;
+    
+
 
     public Empresa() {
     }

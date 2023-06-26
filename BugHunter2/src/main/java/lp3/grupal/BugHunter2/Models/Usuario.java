@@ -27,6 +27,8 @@ public class Usuario {
     @JoinColumn(name="p_empresa")
     Empresa empresa;
     
+    
+    
     @ManyToMany(mappedBy="usuarios",fetch=FetchType.LAZY)
     private Set<Rol> roles;
 
