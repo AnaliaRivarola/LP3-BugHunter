@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+       <style th:fragment="style">
+           body {
+      background-color: rgba(222, 217, 216  );
+      /* o puedes usar una imagen de fondo */
+      /* background-image: url('ruta/a/la/imagen.jpg'); */
+    }
+    .card {
+      width: 300px;
+      height: 300px;
+       transition: transform 0.3s;
+      
+    }
+    
+    .card:hover {
+      transform: scale(1.2);
+    }
+  </style>
+    <body bgcolor="#00000">
+        <header th:replace="comunes/template :: header"></header>
+        
+        <div style="padding-bottom: 70px"></div>
+    <center><div th:fragment="empresasmenu"><h2 style="padding-bottom: 20px">MENU</h2> </center>
+    <table class="table">
+        <hr>
+  <thead>
+    <tr>
+        <th scope="col">
+            <div class="container">
+  <section class="mx-auto my-5" style="max-width: 20rem;">
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
+          <div>
+            <i class="fa fa-quote-left text-white"></i>
+          </div>
+            <center>
+          <h3 class="mb-0 mt-2 font-italic " style="padding-bottom: 20px">
+            Productos
+          </h3>
+            <a type="button" class="btn btn-outline-light" style="background-color: #D98880; font-size: 24px; padding: 20px 20px;" href="/empresas/producto/"><i class="fa-solid fa-bag-shopping"></i> Enter</a></center>
+          <footer class="blockquote-footer pt-4 mt-4 border-top">
+            Lista de productos
+            <cite title="Source Title">;3</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+    
+  </section>
+</div>
+        </th>
+      <th scope="col">
+          <div class="container">
+  <section class="mx-auto my-5" style="max-width: 20rem;">
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
+          <div>
+            <i class="fa fa-quote-left text-white"></i>
+          </div>
+            <center>
+          <h3 class="mb-0 mt-2 font-italic" style="padding-bottom: 20px">
+            Empresas
+            </h3>
+            <a type="button" class="btn btn-outline-light" style="background-color: #D98880; font-size: 24px; padding: 20px 20px;" href="/empresas/"><i class="fa-solid fa-building-user"></i> Enter</a></center>
+          <footer class="blockquote-footer pt-4 mt-4 border-top">
+            Lista de Empresas
+            <cite title="Source Title">:)</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+    
+  </section>
+</div>
+      </th>
+      <th scope="col">
+          <div class="container">
+  <section class="mx-auto my-5" style="max-width: 20rem;">
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
+          <div >
+            <i class="fa fa-quote-left text-white"></i>
+          </div>
+            <center>
+          <h3 class="mb-0 mt-2 font-italic" style="padding-bottom: 20px">
+            Usuarios
+             </h3>
+             <a type="button" class="btn btn-outline-light" style="background-color: #D98880; font-size: 24px; padding: 20px 20px;" href="/empresas/nuevo"><i class="fa-solid fa-users"></i> Enter</a></center>
+          <footer class="blockquote-footer pt-4 mt-4 border-top">
+            Lista de Usuarios
+            <cite title="Source Title"><3</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+    
+  </section>
+</div>
+      </th>
+      <th scope="col">
+          <div class="container">
+  <section class="mx-auto my-5" style="max-width: 25rem;">
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote blockquote-custom bg-white px-3 pt-4">
+          <div >
+            <i class="fa fa-quote-left text-white"></i>
+          </div>
+            <center>
+          <h3 class="mb-0 mt-2 font-italic" style="padding-bottom: 20px">
+            Marcas
+             </h3>
+             <a type="button" class="btn btn-outline-light" style="background-color: #D98880; font-size: 24px; padding: 20px 20px;" href="/marcas/"><i class="far fa-copyright"></i> Enter</a></center>
+          <footer class="blockquote-footer pt-4 mt-4 border-top">
+            Lista de marcas
+            <cite title="Source Title">^^</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+    
+  </section>
+</div>
+      </th>
+  </thead>
+  
+</table>
+    </hr>
+    <div style="padding-bottom: 70px"></div>
+        <footer th:replace="comunes/template :: footer"></footer>
+    </body>
+</html>
+
+

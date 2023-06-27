@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+
+    <head th:fragment="head">
+        <title>BugHunter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+        
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 ">
+    <div class="container-fluid">
+        <p class="navbar-brand">Bienvenido </p> <!--<p th:each="u: ${usuario}" th:text="${u.uNombre}"></p>-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item">
+            <a class="nav-link mx-2 active" aria-current="page" href="/admin">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="/empresas/producto/">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="#">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="/marcas/">Brands</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link mx-2" href="/empresas/">Company</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+        </header>
+        <sidebar class="col-2">
+            
+        </sidebar>
+        <div th:fragment="main">
+            <h1>Main</h1>
+        </div>
+  
+        <footer class="text-center text-white" style="background-color: #CD6155  ;" th:fragment="footer">
+        <!-- Grid container -->
+        <div class="container pt-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    target="_blank"
+                    role="button"
+                    data-mdb-ripple-color="pink"
+                    ><i class="fab fa-facebook-f"></i
+                    ></a>
+
+                <!-- Twitter -->
+                <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    target="_blank"
+                    role="button"
+                    data-mdb-ripple-color="pink"
+                    ><i class="fab fa-twitter"></i
+                    ></a>
+
+                <!-- Google -->
+                <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    target="_blank"
+                    role="button"
+                    data-mdb-ripple-color="pink"
+                    ><i class="fab fa-google"></i
+                    ></a>
+
+                <!-- Instagram -->
+                <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    target="_blank"
+                    role="button"
+                    data-mdb-ripple-color="pink"
+                    ><i class="fab fa-instagram"></i
+                    ></a>
+
+                <!-- Linkedin -->
+                <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    target="_blank"
+                    role="button"
+                    data-mdb-ripple-color="pink"
+                    ><i class="fab fa-linkedin"></i
+                    ></a>
+                <!-- Github -->
+                <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="https://github.com/AnaliaRivarola/LP3-BugHunter"
+                    target="_blank"
+                    role="button"
+                    data-mdb-ripple-color="pink"
+                    ><i class="fab fa-github"></i
+                    ></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    </body>
+</html>
+

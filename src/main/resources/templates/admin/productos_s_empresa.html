@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <div th:fragment="productoLista"><h1>Lista</h1>
+        <div class="col-8">   
+            <h2 th:each="e: ${empresa}" th:text="@{Productos de: }+${e.e_nombre}"></h2>
+            <a type="button" class="btn btn-outline-light" style="background-color: #D98880" href="/empresas/producto/nuevo"><i class="fa-solid fa-plus"></i></a>
+            <table class="table table-hover">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Memoria de Almacenamiento</th>
+                    <th>Memoria RAM</th>
+                    <th>Sistema Operativo</th>
+                    <th>Procesador</th>
+                    <th>Pantalla</th>
+                    <th>Empresa</th>
+                    <th></th>
+                    <th></th>
+
+
+                </tr>
+                <tr th:each="p: ${productos}">
+                    <td th:text="${p.p_id}"></td>
+                    <td th:text="${p.p_nombre}"></td>
+                    <td th:text="${p.p_descripcion}"></td>
+                    <td th:text="${p.p_almacenamiento}"></td>
+                    <td th:text="${p.p_ram}"></td>
+                    <td th:text="${p.p_sistemaOperativo}"></td>
+                    <td th:text="${p.p_procesador}"></td>
+                    <td th:text="${p.p_pantalla}"></td>
+                    <td th:text="${p.marca != null ? p.marca.m_nombre : ''}"></td>
+                    <td></td>
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #D98880" th:href="@{/empresas/producto/editar/}+${p.p_id}" ><i class="fas fa-edit"></i></a></td>
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #CB4335" th:href="@{/empresas/producto/borrar/}+${p.p_id}" ><i class="fas fa-trash"></i></a></td>
+                    </tr>
+
+            </table>
+             </div>
+        </div>
+            </div> 
+        </div>
+    </body>
+</html>

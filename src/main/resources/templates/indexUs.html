@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="https://www.thymeleaf.org">
+    <head th:replace="comunes/templateUsu :: head">
+        <title>Portada</title>
+    </head>
+    <style th:replace="@{${estilo}} :: ${parte}"></style>
+    <body>
+        <header th:replace="comunes/templateUsu :: header"></header>
+        <div style="margin: 100px 0px 100px 0px">
+            <div class="col">
+                <div th:replace="@{${vista}} :: ${fragmento}"></div>
+            </div>
+        </div>
+        <footer th:replace="comunes/templateUsu :: footer"></footer>
+    </body>
+</html>
