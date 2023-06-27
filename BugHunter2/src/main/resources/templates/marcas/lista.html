@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <div th:fragment="marcaslista">
+        <div class="col-8">   
+            <h1 style="padding-bottom: 30px">Marcas</h1>
+            <a type="button" class="btn btn-outline-light" style="background-color: #D98880;margin-bottom: 10px" href="/marcas/nuevo"><i class="fa-solid fa-plus"></i></a>
+            <table class="table table-hover">
+                <tr>
+                    <th>Id</th>
+                    <th>Marcas</th>
+
+                    <th></th>
+                    <th></th>
+                    <th></th>
+
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+
+                </tr>
+                <tr th:each="m: ${marcas}">
+                    <td th:text="${m.m_id}"></td>
+                    <td th:text="${m.m_nombre}"></td>
+
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #D98880" th:href="@{/marcas/editar/}+${m.m_id}" ><i class="fas fa-edit"></i></a></td>
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #CB4335" th:href="@{/marcas/borrar/}+${m.m_id}" ><i class="fas fa-trash"></i></a></td>
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #D98880" th:href="@{/marcas/}+${m.m_id}+@{/productos}" ><i class="fa-solid fa-users"></i> Productos</a></td>
+
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #D98880" th:href="@{/marcas/editar/}+${m.m_id}" ><i class="fas fa-edit"></i> Editar</a></td>
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #CB4335" th:href="@{/marcas/borrar/}+${m.m_id}" ><i class="fas fa-trash"></i> Borrar</a></td>
+                    <td><a type="button" class="btn btn-danger" th:href="@{/marcas/}+${m.m_id}+@{/productos}" ><i class="fa-solid fa-bag-shopping"></i> Productos</a></td>
+                </tr>
+
+            </table>
+             <div style="padding-bottom: 60px"></div>
+        
+             </div>
+        </div>
+            </div> 
+        </div>
+        
+    </body>
+</html>
+                
