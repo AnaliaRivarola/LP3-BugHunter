@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-06-2023 a las 00:35:29
+-- Tiempo de generación: 27-06-2023 a las 05:21:20
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -39,8 +39,9 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`e_id`, `e_nombre`, `e_direccion`, `e_telefono`) VALUES
-(2, 'Tigo', 'Encarnacion', '0985000000'),
-(3, 'Claro', 'Encar', '0972111111');
+(3, 'Claro', 'Encar', '0972111111'),
+(5, 'Tigo', 'Encarnacion', '0985000000'),
+(6, 'alan', 'asuncion', '0804597243');
 
 -- --------------------------------------------------------
 
@@ -109,9 +110,8 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`p_id`, `p_nombre`, `p_descripcion`, `p_pantalla`, `p_almacenamiento`, `p_ram`, `p_sistema_operativo`, `p_procesador`, `p_marca_id`, `p_empresa_id`) VALUES
-(1, 'Samsung S9', 'celu', '456', '500', '16', 'Android', 'poui', 1, 2),
-(2, 'Samsung S20', 'celular', '876', '987', '827', 'android', '749', 1, 3),
-(52, 'yujhb', 'olitkuyjtd', 'rmn', ',yut', 'o8ltikruj', 'itkr', 'ujyti', NULL, NULL);
+(1, 'Samsung S9', 'Color Gris', '456', '500', '16', 'Android', 'poui', 1, 5),
+(2, 'Samsung S20', 'gis aa', '876', '987', '827', 'android', '749', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -259,7 +259,7 @@ ALTER TABLE `usuario_rol`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `e_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `e_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
