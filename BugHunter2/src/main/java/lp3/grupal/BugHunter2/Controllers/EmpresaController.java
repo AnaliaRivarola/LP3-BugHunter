@@ -77,6 +77,7 @@ public class EmpresaController {
             List<Producto> productos = productoRepository.findAllByEmpresa(empresa);
             model.addAttribute("productos", productos);
         }
+        model.addAttribute("empresa", empresa);
         model.addAttribute("vista", "admin/productos_s_empresa");
         model.addAttribute("fragmento", "productoLista");
         return "index";

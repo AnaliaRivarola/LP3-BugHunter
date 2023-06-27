@@ -3,13 +3,16 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
     </head>
     <body>
         <div th:fragment="productoLista"><h1>LISTA</h1>
         <div class="col-8">   
-            <h1 th:each="p: ${productos[0]}" th:text="@{Productos de: }+${p.marca.m_nombre}"></h1>
-            <a href="/empresas/producto/nuevo">Nuevo</a>
-            <table class="table table-striped table-hover">
+            <h1 th:each="p: ${productos}" th:text="@{Productos de: }+${p.marca.m_nombre}"></h1>
+            <a type="button" class="btn btn-outline-light" style="background-color: #D98880" href="/empresas/producto/nuevo">Nuevo</a>
+            <div style="padding-bottom: 10px"></div>
+            <table class="table table-hover">
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
@@ -32,8 +35,8 @@
                     <td th:text="${p.p_procesador}"></td>
                     <td th:text="${p.p_pantalla}"></td>
                     <td th:text="${p.empresa != null ? p.empresa.e_nombre : ''}"></td>
-                    <td><a type="button" class="btn btn-success" th:href="@{/empresas/producto/editar/}+${p.p_id}" >Editar</a></td>
-                    <td><a type="button" class="btn btn-danger" th:href="@{/empresas/producto/borrar/}+${p.p_id}" >Borrar</a></td>
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #D98880" th:href="@{/empresas/producto/editar/}+${p.p_id}" >Editar</a></td>
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #CB4335" th:href="@{/empresas/producto/borrar/}+${p.p_id}" >Borrar</a></td>
                     </tr>
 
             </table>

@@ -4,16 +4,21 @@
         <title>Inicio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
     </head>
     <body>
         <div th:fragment="marcasformAgg">
             <h1>Formulario</h1>
-            <a href="/marcas/">Volver</a>
+            <a type="button" class="btn btn-outline-light" style="background-color: #D98880" href="/marcas/">Volver</a>
+            <div class="row g-3 align-items-center">
             <form th:action="@{/marcas/guardar}" method="post" th:object="${marcas}">
                 <input type="hidden" name="m_id" th:field="*{m_id}">
-                <input type="text" id="m_nombre" name="m_nombre" placeholder="Ingrese el nombre de la marca" th:field="*{m_nombre}">
+                <label for="disabledTextInput" class="form-label">Nombre</label>
+                <input type="text" id="m_nombre" name="m_nombre" class="form-control" aria-describedby="passwordHelpInline" placeholder="Ingrese el nombre de la marca" th:field="*{m_nombre}">
                 <button type="submit">Enviar</button>
             </form>
-        </div> 
+        </div>
+        </div>
     </body>
 </html>

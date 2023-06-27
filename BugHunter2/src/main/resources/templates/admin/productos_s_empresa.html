@@ -7,7 +7,7 @@
     <body>
         <div th:fragment="productoLista"><h1>LISTA</h1>
         <div class="col-8">   
-            <h1 th:each="p: ${productos[0]}" th:text="@{Productos de: }+${p.empresa.e_nombre}"></h1>
+            <h1 th:each="e: ${empresa}" th:text="@{Productos de: }+${e.e_nombre}"></h1>
             <a href="/empresas/producto/nuevo">Nuevo</a>
             <table class="table table-striped table-hover">
                 <tr>
@@ -43,4 +43,3 @@
         </div>
     </body>
 </html>
-
