@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <body>
+        <div th:object="${producto}" th:fragment="productoform">
+            <div class="center-content">
+                <div class="col-8" style=" border-radius: 25px; padding: 10px; margin: 10px; background-color: white">
+                    <center><h1>Producto</h1></center>
+                <a type="button" class="btn btn-outline-light" style="background-color: #D98880" th:href="@{/user/producto/}+*{p_id}"><i class="fas fa-backward"></i></a>
+                <div class="row g-3 align-items-center">
+                <form th:action="@{/user/guardar}" method="post">
+                    <input type="hidden" name="p_id" th:field="*{p_id}">
+                    <label for="disabledTextInput" class="form-label">Nombre</label>
+                    <input type="text" id="p_nombre" name="p_nombre" class="form-control" aria-describedby="passwordHelpInline" placeholder="Ingrese el nombre del producto" th:field="*{p_nombre}">
+                    <label for="disabledTextInput" class="form-label">Descripcion</label>
+                    <input type="text" id="p_descripcion" name="p_descripcion" class="form-control" aria-describedby="passwordHelpInline" placeholder="Descripcion del producto" th:field="*{p_descripcion}">
+                    <label for="disabledTextInput" class="form-label">Memoria de Almacenamiento</label>
+                    <input type="text" id="p_almacenamiento" name="p_almacenamiento" class="form-control" aria-describedby="passwordHelpInline" placeholder="Memoria de Almacenamiento" th:field="*{p_almacenamiento}">
+                    <label for="disabledTextInput" class="form-label">Ram</label>
+                    <input type="text" id="p_ram" name="p_ram" class="form-control" aria-describedby="passwordHelpInline" placeholder="Memoria RAM" th:field="*{p_ram}">
+                    <label for="disabledTextInput" class="form-label">Sistema Operativo</label>
+                    <input type="text" id="p_sistemaOperativo" name="p_sistemaOperativo" class="form-control" aria-describedby="passwordHelpInline" placeholder="Sistema Operativo" th:field="*{p_sistemaOperativo}">
+                    <label for="disabledTextInput" class="form-label">Procesador</label>
+                    <input type="text" id="p_procesador" name="p_procesador" class="form-control" aria-describedby="passwordHelpInline" placeholder="Procesador" th:field="*{p_procesador}">
+                    <label for="disabledTextInput" class="form-label">Pantalla</label>
+                    <input type="text" id="p_pantalla" name="p_pantalla" class="form-control" aria-describedby="passwordHelpInline" placeholder="Pantalla" th:field="*{p_pantalla}">
+
+                    <label for="empresa">Empresa:</label>
+                    <select class="form-control" id="empresa" name="empresa">
+
+
+
+                    </select>
+                    <label for="marca">Marca:</label>
+                    <select class="form-control" id="empresa" name="empresa">
+
+
+
+                    </select>
+                    <center><button type="submit" class="btn btn-outline-light" style="width:50%; background-color: #D98880; margin: 10px 0 10px 0" ><i class="fas fa-paper-plane"></i> Enviar</button></center>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

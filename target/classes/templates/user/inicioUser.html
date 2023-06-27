@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    </head>
+    <style th:fragment="style">
+    .card {
+       width: 300px;
+    height: 300px;
+    transition: transform 0.3s;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    }
+    
+    .card:hover {
+      transform: scale(1.05);
+    }
+    body {
+      background-color: rgba(222, 217, 216  );
+      /* o puedes usar una imagen de fondo */
+      /* background-image: url('ruta/a/la/imagen.jpg'); */
+    }
+    .blockquote-custom {
+    border-left: none;
+    font-family: Arial, sans-serif;
+    position: relative;
+  }
+
+  .blockquote-custom:before {
+    display: none;
+  }
+
+  .blockquote-custom .quote {
+    font-size: 24px;
+    color: #D07E70;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blockquote-custom .quote i {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 56px;
+    color: rgba(0, 0, 0, 0.1);
+  }
+.blockquote-custom .footer {
+    color: #777;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .btn-search {
+    border-radius: 0 5px 5px 0;
+    background-color: #D98880;
+    border-color: #D98880;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  </style>
+    <body>
+        
+        <div style="margin-bottom: 70px" th:fragment="productoscards">
+            
+            <center><h2 style="margin-bottom: 40px"></h2> 
+                <div class="container mt-3">
+                  <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar..." style="color:#D07E70;margin-bottom: 40px"><button class="btn btn-outline-light" onclick="search()" style="background-color: #D98880;;margin-bottom: 40px">Buscar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <div class="row">
+                <div class="col-4" th:each="p: ${producto}">
+                    <div class="card" >
+                        <div class="card-body">
+                          <blockquote class="blockquote blockquote-custom px-3 pt-4">
+                            <div>
+                              <i class="fa fa-quote-left text-white"></i>
+                            </div>
+                              <center>
+                            <h3 class="mb-0 mt-2 font-italic " style="padding-bottom: 20px" th:text="${p.p_nombre}"></h3>
+                              <a type="button" class="btn btn-outline-light" style="background-color: #D07E70; font-size: 24px; padding: 20px 20px;" th:href="@{/user/producto/}+${p.p_id}"><i class="fas fa-info-circle"></i> Ver detalles</a></center>
+                            <footer class="blockquote-footer pt-4 mt-4 border-top">
+                              <cite title="Source Title" th:text="${p.p_descripcion}"></cite>
+                            </footer>
+                          </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></center>
+    </body>
+</html>
+

@@ -1,0 +1,15 @@
+lp3\grupal\BugHunter2\Repositorio\MarcaRepository.class
+lp3\grupal\BugHunter2\Repositorio\ProductoRepository.class
+lp3\grupal\BugHunter2\Repositorio\UsuarioRepository.class
+lp3\grupal\BugHunter2\Controllers\indexController.class
+lp3\grupal\BugHunter2\BugHunter2Application.class
+lp3\grupal\BugHunter2\Controllers\MarcaController.class
+lp3\grupal\BugHunter2\Models\Empresa.class
+lp3\grupal\BugHunter2\Controllers\User\usuarioController.class
+lp3\grupal\BugHunter2\Repositorio\EmpresaRepository.class
+lp3\grupal\BugHunter2\Models\Rol.class
+lp3\grupal\BugHunter2\Models\Usuario.class
+lp3\grupal\BugHunter2\Controllers\EmpresaController.class
+lp3\grupal\BugHunter2\Models\Producto.class
+lp3\grupal\BugHunter2\Controllers\ProductosController.class
+lp3\grupal\BugHunter2\Models\Marca.class
