@@ -23,7 +23,7 @@ public class Usuario {
     @Basic
     @Column(name = "u_nombre")
     private String u_nombre;
-     @Column(name = "u_correo_electronico")
+    @Column(name = "u_correo_electronico")
     private String u_correo;
     @Column(name = "u_contrasena")
     private String u_contrasena;
@@ -49,6 +49,13 @@ public class Usuario {
         this.u_correo = u_correo;
         this.u_contrasena = u_contrasena;
         this.empresa = empresa;
+        this.roles = roles;
+    }
+
+    public Usuario(String u_nombre, String u_correo, String u_contrasena, List<Rol> roles) {
+        this.u_nombre = u_nombre;
+        this.u_correo = u_correo;
+        this.u_contrasena = u_contrasena;
         this.roles = roles;
     }
 
