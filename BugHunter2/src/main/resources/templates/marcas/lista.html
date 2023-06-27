@@ -16,22 +16,26 @@
                 <tr>
                     <th>Id</th>
                     <th>Marcas</th>
-                    <th>Editar</th>
-                    <th>Borrar</th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
                 </tr>
                 <tr th:each="m: ${marcas}">
                     <td th:text="${m.m_id}"></td>
                     <td th:text="${m.m_nombre}"></td>
-                    <td><a type="button" class="btn btn-outline-light" style="background-color: #D98880" th:href="@{/marcas/editar/}+${m.m_id}" ><i class="fas fa-edit"></i>Editar</a></td>
-                    <td><a type="button" class="btn btn-outline-light" style="background-color: #CB4335" th:href="@{/marcas/borrar/}+${m.m_id}" ><i class="fas fa-trash"></i>Borrar</a></td>
-                    <td><a type="button" class="btn btn-danger" th:href="@{/marcas/}+${m.m_id}+@{/productos}" >Productos</a></td>
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #D98880" th:href="@{/marcas/editar/}+${m.m_id}" ><i class="fas fa-edit"></i> Editar</a></td>
+                    <td><a type="button" class="btn btn-outline-light" style="background-color: #CB4335" th:href="@{/marcas/borrar/}+${m.m_id}" ><i class="fas fa-trash"></i> Borrar</a></td>
+                    <td><a type="button" class="btn btn-danger" th:href="@{/marcas/}+${m.m_id}+@{/productos}" ><i class="fa-solid fa-bag-shopping"></i> Productos</a></td>
                 </tr>
 
             </table>
+             <div style="padding-bottom: 60px"></div>
+        
              </div>
         </div>
             </div> 
         </div>
+        
     </body>
 </html>
                 
