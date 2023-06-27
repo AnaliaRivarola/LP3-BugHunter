@@ -33,10 +33,6 @@ public class Rol {
     public Rol() {
     }
 
-    public Rol(String r_nombre) {
-        this.r_nombre = r_nombre;
-    }
-    
     public Rol(Long r_id, String r_nombre, List<Usuario> usuarios) {
         this.r_id = r_id;
         this.r_nombre = r_nombre;
